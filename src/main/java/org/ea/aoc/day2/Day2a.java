@@ -1,12 +1,9 @@
-package org.ea.aoc.day1;
+package org.ea.aoc.day2;
 
 import org.ea.aoc.Util;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Day2a {
     public static void main(String[] args) throws IOException  {

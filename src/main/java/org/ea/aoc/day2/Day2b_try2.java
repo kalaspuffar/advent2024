@@ -1,4 +1,4 @@
-package org.ea.aoc.day1;
+package org.ea.aoc.day2;
 
 import org.ea.aoc.Util;
 
