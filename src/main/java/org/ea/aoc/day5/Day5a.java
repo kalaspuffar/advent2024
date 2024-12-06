@@ -45,7 +45,6 @@ public class Day5a {
                     }
                 }
                 if (correct) {
-
                     result += Integer.parseInt(splitArr[splitArr.length / 2]);
                 }
             }

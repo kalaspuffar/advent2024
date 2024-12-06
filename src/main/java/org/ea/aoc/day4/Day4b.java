@@ -37,7 +37,7 @@ public class Day4b {
         /**
          * M S
          *  A
-         * N S
+         * M S
          */
         if (
             grid[y - 1][x - 1] == 2 && grid[y - 1][x + 1] == 4 &&

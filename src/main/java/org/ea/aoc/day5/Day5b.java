@@ -22,7 +22,6 @@ public class Day5b {
                 rules.get(arr[0]).add(arr[1]);
             }
             if (line.contains(",")) {
-                Map<String, Integer> lineToCheck = new HashMap<>();
                 String[] splitArr = line.split(",");
 
                 List<String> before = Arrays.asList(splitArr);
