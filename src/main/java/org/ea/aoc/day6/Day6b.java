@@ -58,8 +58,6 @@ public class Day6b {
                 int y = orgy;
                 int dir = NORTH;
 
-                // 1454 too high
-
                 while (x > -1 && y > -1 && x < width && y < height) {
                     map[y * width + x]++;
 
@@ -68,6 +66,11 @@ public class Day6b {
                         break;
                     }
 
+                    /*
+                    This change came from a hint from Wayne Bagguley in the community.
+                    I had totally missed that the guard could turn multiple times which
+                    in hindsight was obvious.
+                     */
                     int canWalk = 0;
                     while (canWalk == 0) {
                         canWalk = checkDir(map, width, x, y, dir);
