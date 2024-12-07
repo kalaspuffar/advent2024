@@ -68,11 +68,14 @@ public class Day6b {
                         break;
                     }
 
-                    int canWalk = checkDir(map, width, x, y, dir);
-                    if (canWalk == 0) {
-                        dir = dir < WEST ? dir + 1 : NORTH;
-                    } else if (canWalk == 2) {
-                        break;
+                    int canWalk = 0;
+                    while (canWalk == 0) {
+                        canWalk = checkDir(map, width, x, y, dir);
+                        if (canWalk == 0) {
+                            dir = dir < WEST ? dir + 1 : NORTH;
+                        } else if (canWalk == 2) {
+                            break;
+                        }
                     }
 
                     switch (dir) {
