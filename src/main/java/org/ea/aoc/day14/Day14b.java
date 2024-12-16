@@ -37,7 +37,10 @@ public class Day14b {
         int qys2 = 50;
         int qys3 = 75;
 
-        for (long i = 0; i < 1_000_000_000L; i++) {
+        // 5997 - To low
+        // 110027 - ?
+
+        for (long i = 0; i < 1_000_001L; i++) {
             boolean[] map = new boolean[roomX * roomY];
 
             int quad1x1 = 0;
@@ -54,6 +57,7 @@ public class Day14b {
                 int ty = b.getY();
                 int tx = b.getX();
                 map[ty * roomX + tx] = true;
+                /*
                 if (ty < qys1 && tx < qxs) {
                     quad1x1++;
                 } else if (ty < qys1 && tx > qxs) {
@@ -71,17 +75,35 @@ public class Day14b {
                 } else if (ty > qys3 && tx > qxs) {
                     quad4x2++;
                 }
+                */
             }
 
+            int count = 0;
+            for (int y = 0; y < roomY; y++) {
+                for (int x = 0; x < 50; x++) {
+                    if (map[y * roomX + x] && map[y * roomX + ((roomX - 1) - x)]) {
+                        count++;
+                    }
+                }
+            }
+
+            if (count < 49) continue;
+            System.out.println(count);
+            //if (true) continue;
+
+            /*
             if (quad1x1 != quad1x2) continue;
             if (quad2x1 != quad2x2) continue;
             if (quad3x1 != quad3x2) continue;
             if (quad4x1 != quad4x2) continue;
-/*
-            if (quad1x1 > quad2x1) continue;
-            if (quad2x1 > quad3x1) continue;
-            if (quad3x1 > quad4x1) continue;
-*/
+             */
+
+            /*
+            if (quad1x1 * 1.17 > quad2x1) continue;
+            if (quad2x1 * 1.17 > quad3x1) continue;
+            if (quad3x1 * 1.17 > quad4x1) continue;
+            */
+
             System.out.println(i + 1);
 
             BufferedWriter bw = new BufferedWriter(new FileWriter("data/" + (i + 1) + ".txt"));
